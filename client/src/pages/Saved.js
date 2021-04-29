@@ -1,8 +1,13 @@
 import React from "react";
+import BookCard from "../components/Bookcard";
 
 function Saved() {
   return (
-    <p>saved test</p>
+    <div>
+      <BookCard 
+        action={"Delete"}
+      />
+   </div>
   );
 }
 

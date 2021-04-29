@@ -1,8 +1,13 @@
 import React from "react";
+import BookCard from "../components/Bookcard";
 
 function Search() {
   return (
-    <p>search test</p>
+    <div>
+    <BookCard 
+      action={"Save"}
+    />
+  </div>
   );
 }
 
