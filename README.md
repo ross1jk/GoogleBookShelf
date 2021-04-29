@@ -52,7 +52,7 @@ Having an active and healthy commit history on GitHub is important for your futu
 
 * `link` - The Book's information link as returned from the Google Books API
 
-* Creating `documents` in your `books` collection similar to the following:
+* Creating `documents` in your `books` collection similar to the following:j
 
     ```js
     {
