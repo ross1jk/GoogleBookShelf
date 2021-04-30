@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Saved from "./pages/Saved";
-import Search from "./pages/Search";
+import Books from "./pages/Books";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
-import Wrapper from "./components/Wrapper";
 
 function App() {
   return (
@@ -12,19 +12,20 @@ function App() {
       <div>
         <Nav />
         <Jumbotron />
-        <Wrapper>
         <Switch>
-          <Route exact path={["/", "/search"]}>
-            <Search />
+          <Route exact path={["/", "/books"]}>
+            <Books />
           </Route>
-          <Route exact path="/saved">
-            <Saved />
+          <Route exact path="/books/:id">
+            <Detail />
+          </Route>
+          <Route>
+            <NoMatch />
           </Route>
         </Switch>
-        </Wrapper>
       </div>
     </Router>
-  )
+  );
 }
 
 export default App;
