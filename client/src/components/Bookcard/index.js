@@ -12,7 +12,7 @@ function BookCard(props) {
                             <h3>{props.authors}</h3>
                         </Col>
                         <Col size="3">
-                            <button type="button" class="btn btn-info">View</button>
+                            <a href={props.link} type="button" class="btn btn-info">View</a>
                             <button type="button" class="btn btn-info">{props.action}</button>
                         </Col>
                     </Row>

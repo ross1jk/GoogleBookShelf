@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
+import { Container } from "../components/Grid";
 import BookCard from "../components/Bookcard";
 
 function Books() {
@@ -31,27 +29,6 @@ function Books() {
       .catch(err => console.log(err));
   }
 
-  // Handles updating component state when the user types into the input field
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
-  };
-
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (formObject.title && formObject.author) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
-      })
-        .then(res => loadBooks())
-        .catch(err => console.log(err));
-    }
-  };
-
   return (
     <Container fluid>
           {books.length ? (
@@ -62,6 +39,9 @@ function Books() {
                   authors={book.authors}
                   description={book.description}
                   image={book.image}
+                  link={book.link}
+                  action={"Delete"}
+                  id={book.id}
                 />
               ))}
 
