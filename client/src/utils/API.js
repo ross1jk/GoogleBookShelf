@@ -21,7 +21,7 @@ export default {
   },
 
   //googleURL
-  googleBooks: function(){
-    return axios.get(googleurl + "Harry Potter");
+  googleBooks: function(query){
+    return axios.get(googleurl + query);
   }
 };

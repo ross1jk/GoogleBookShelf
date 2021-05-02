@@ -1,49 +1,51 @@
-import React, { useState, useEffect } from "react";
-import Searchform from "../components/Searchform";
+import React, { useState } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import BookCard from "../components/Bookcard";
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 function Search() {
-  // Setting our component's initial state
+
   const [books, setBooks] = useState([])
+  const [bookSearch, setBookSearch] = useState("")
 
-  useEffect(() => {
-    loadBooks()
-  }, [])
+  function handleInputChange(event) {
+    const { value } = event.target;
+    setBookSearch(value);
+  };
 
-    // Loads all books and sets them to books
-    function loadBooks() {
-      API.googleBooks()
-        .then(res =>
-          setBooks(res.data.items)
-        )
+  function handleFormSubmit(event) {
+    event.preventDefault();
+      API.googleBooks(bookSearch)
+        .then(res => setBooks(res.data)) // not reading this for some reason
         .catch(err => console.log(err));
-    };
-  // const [bookSearch, setFormObject] = useState({})
-
-  // function handleInputChange(event) {
-  //   const { value } = event.target;
-  //   setFormObject(value)
-  // };
-
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
-  //     API.getBooks(books)
-  //       .then(res => setBooks())
-  //       .catch(err => console.log(err));
-  // };
+ };
 
   return (
     <Container fluid>
       <Row>
-        <Col size="12">
-          <Searchform
-           
+        <Col size="10">
+          <Input 
+          name="bookSearch"
+          value={bookSearch}
+          onChange={handleInputChange}
+          placeholder="Search for a book!"
           />
         </Col>
+        <Col size="2">
+        <Button 
+          onClick={handleFormSubmit}
+          type="success"
+          className="input-lg"
+        >
+        Search
+        </Button>
+        </Col>
       </Row>
-      {books.length ? (
+      {!books.length ? (
+        <h2>Look up a book</h2>
+       ) :
         <div>
           {books.map(book => (
             <BookCard
@@ -58,10 +60,7 @@ function Search() {
           ))}
 
         </div>
-      ) : (
-        <h2>
-          Look Something Up!
-        </h2>)}
+      }
     </Container>
   );
 }
