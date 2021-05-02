@@ -39,18 +39,20 @@ function Books() {
                   authors={book.authors}
                   description={book.description}
                   image={book.image}
-                  link={book.link}
-                  action={"Delete"}
                   id={book.id}
+                  action={"Delete"}
+                  link={book.link}
                 />
               ))}
-
             </div>
           ) : (
             <h2>
               You have no shelved books!
             </h2>)}
+            
+           
     </Container>
+    
   );
 }
 

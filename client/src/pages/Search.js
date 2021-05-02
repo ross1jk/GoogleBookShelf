@@ -51,9 +51,9 @@ function Search() {
               authors={book.volumeInfo.authors}
               description={book.volumeInfo.description}
               image={book.volumeInfo.imageLinks.smallThumbnail}
-              link={book.selfLink}
-              action={"Add"}
               id={book.id}
+              action={"Add"}
+              link={book.volumeInfo.previewLink}
             />
           ))}
 
