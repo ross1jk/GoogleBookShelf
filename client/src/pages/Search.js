@@ -18,7 +18,7 @@ function Search() {
   function handleFormSubmit(event) {
     event.preventDefault();
       API.googleBooks(bookSearch)
-        .then(res => setBooks(res.data)) // not reading this for some reason
+        .then(res => setBooks(res.data.items))
         .catch(err => console.log(err));
  };
 
