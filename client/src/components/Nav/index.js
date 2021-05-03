@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-info">
-      <h1 className="navbar-brand">
+    <nav id="navbar" className="navbar navbar-expand-lg">
+      <h1 id="navTitle" className="navbar-brand">
         Google Book Shelf
       </h1>
-      <Link to="/search" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"} >
+      <Link id="link" to="/search" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"} >
         Search Books
       </Link>
-      <Link
+      <Link id="link"
         to="/saved"
         className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}>
         Saved Books

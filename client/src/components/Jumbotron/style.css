@@ -1,0 +1,26 @@
+.jumbotron{
+    text-align: center !important;
+    background-image: url("https://media.giphy.com/media/QK37Z2AUUeP85igduY/giphy.gif") !important;
+    background-size: cover; 
+    background-blend-mode: luminosity;
+}
+
+#title {
+    font-family: 'Kaushan Script', cursive;
+    color: #da9286;
+    text-shadow: black 2px 2px !important;
+}
+
+#jumbopara {
+    font-size: 30px !important;
+    font-weight: bolder i !important;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-shadow: #da9286 1px 1px !important;
+}
+
+/* Colors 
+Brown:#dd9a78
+light pink: eccbc2
+darker pink:#da9286 
+orange: d17b5f
+*/

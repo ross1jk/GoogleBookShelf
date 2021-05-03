@@ -1,0 +1,25 @@
+.card {
+  border-bottom: #da9286 0.3em solid !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 25px !important;
+}
+
+#bookTitle {
+  font-family: "Kaushan Script", cursive;
+  font-size: 40px;
+}
+
+#bookAuth {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 35px !important;
+}
+
+#bookBtnView,
+#bookBtnAction {
+  background-color: #da9286;
+  color: white;
+  margin: 10px;
+}
