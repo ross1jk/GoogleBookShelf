@@ -17,7 +17,7 @@ function App() {
           </Route>
           <Route>
             <Search />
-]         </Route>
+        </Route>
         </Switch>
       </div>
     </Router>
