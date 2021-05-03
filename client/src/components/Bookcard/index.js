@@ -5,7 +5,7 @@ import "./style.css";
 function BookCard(props) {
   return (
     <div>
-      <div className="card">
+      <div className="card" id={props.id}>
         <div className="card-body">
           <Row>
             <Col size="9">

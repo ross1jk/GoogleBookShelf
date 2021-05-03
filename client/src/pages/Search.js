@@ -22,6 +22,21 @@ function Search() {
         .catch(err => console.log(err));
  };
 
+ function addBook(index) {
+   console.log(books); 
+   // look up which book based on the id 
+   // save based on that book 
+   // start at 0 and increment each time 
+   API.saveBook({
+     authors: books[index].volumeInfo.authors,
+     description: books[index].volumeInfo.description,
+     image: books[index].volumeInfo.imageLinks.smallThumbnail,
+     link: books[index].volumeInfo.previewLink,
+     title: books[index].volumeInfo.title,
+   })
+   .then(alert("You added the book!"))
+   
+ }
   return (
     <Container fluid>
       <Row>
@@ -47,14 +62,15 @@ function Search() {
         <h2>Look up a book</h2>
        ) :
         <div>
-          {books.map(book => (
+          {books.map((book, index) => (
             <BookCard
               title={book.volumeInfo.title}
               authors={book.volumeInfo.authors}
               description={book.volumeInfo.description}
               image={book.volumeInfo.imageLinks.smallThumbnail}
-              id={book.id}
+              id={index} // array index number 
               action={"Add"}
+              onClick={() => addBook(index)}
               link={book.volumeInfo.previewLink}
             />
           ))}
