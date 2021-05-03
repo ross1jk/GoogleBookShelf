@@ -6,8 +6,7 @@ import BookCard from "../components/Bookcard";
 function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
-  const [formObject, setFormObject] = useState({})
-
+  
   // Load all books and store them with setBooks
   useEffect(() => {
     loadBooks()
@@ -42,6 +41,7 @@ function Books() {
                   id={book.id}
                   action={"Delete"}
                   link={book.link}
+                  onClick={() => deleteBook(book._id)}
                 />
               ))}
             </div>

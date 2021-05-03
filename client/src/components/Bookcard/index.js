@@ -13,10 +13,10 @@ function BookCard(props) {
             </Col>
             <Col size="3">
               <div>
-                <a href={props.link} type="button" class="btn btn-info">
+                <a href={props.link} type="button" className="btn btn-info">
                   View
                 </a>
-                <button type="button" class="btn btn-info">
+                <button type="button" className="btn btn-info" onClick={props.onClick}>
                   {props.action}
                 </button>
               </div>
