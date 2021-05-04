@@ -24,9 +24,8 @@ function Search() {
 
  function addBook(index) {
    console.log(books); 
-   // look up which book based on the id 
-   // save based on that book 
-   // start at 0 and increment each time 
+   // look up which book based on the index of the array I searched 
+   // save based on the index, and book I searched 
    API.saveBook({
      authors: books[index].volumeInfo.authors,
      description: books[index].volumeInfo.description,
@@ -34,9 +33,10 @@ function Search() {
      link: books[index].volumeInfo.previewLink,
      title: books[index].volumeInfo.title,
    })
-   .then(alert("You added the book!"))
+   .then(alert(`You added the book ` + books[index].volumeInfo.title + ` by` + books[index].volumeInfo.authors + ` to your shelf!`))
    
  }
+ 
   return (
     <Container fluid>
       <Row>
