@@ -45,7 +45,7 @@ function Books() {
             </div>
           ) : (
             <h2>
-              You have no shelved books!
+            📚 You have no shelved books 📚
             </h2>)}
             
            

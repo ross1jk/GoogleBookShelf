@@ -45,7 +45,7 @@ function Search() {
           name="bookSearch"
           value={bookSearch}
           onChange={handleInputChange}
-          placeholder="Search for a book!"
+          placeholder="Search book title or author"
           />
         </Col>
         <Col size="2">
@@ -59,7 +59,7 @@ function Search() {
         </Col>
       </Row>
       {!books.length ? (
-        <h2>Look up a book</h2>
+        <h2> 📚 Look up a book 📚 </h2>
        ) :
         <div>
           {books.map((book, index) => (
