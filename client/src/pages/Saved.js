@@ -38,7 +38,8 @@ function Books() {
                   authors={book.authors}
                   description={book.description}
                   image={book.image}
-                  id={book.id}
+                  id={book._id}
+                  key={book._id}
                   action={"Delete"}
                   link={book.link}
                   onClick={() => deleteBook(book._id)}

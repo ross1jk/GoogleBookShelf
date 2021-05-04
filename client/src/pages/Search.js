@@ -68,6 +68,7 @@ function Search() {
               authors={book.volumeInfo.authors}
               description={book.volumeInfo.description}
               image={book.volumeInfo.imageLinks.smallThumbnail}
+              key={book.id}
               id={index} // array index number 
               action={"Add"}
               onClick={() => addBook(index)}
