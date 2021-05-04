@@ -59,7 +59,7 @@ function Search() {
         </Col>
       </Row>
       {!books.length ? (
-        <h2> 📚 Look up a book 📚 </h2>
+        <h2 id="noBook"> 📚 Look up a book 📚 </h2>
        ) :
         <div>
           {books.map((book, index) => (
